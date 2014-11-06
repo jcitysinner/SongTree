@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif; }
+
+.messages {
+  display: block;
+  border: solid 1px #333;
+  width: 100%;
+  min-height: 100px; }
+
+a {
+  display: inline-block;
+  padding: 5px 15px;
+  text-decoration: none;
+  border: 1px solid #333; }
+
+input {
+  width: 360px;
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid #333;
+  line-height: 100%; }
