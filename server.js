@@ -20,8 +20,8 @@ io.on('connection', function(socket){
   console.log('A User Connected');
 
   //handle message event
-  socket.on('message', function(text){
-  	io.emit('update', text);
+  socket.on('song', function(data){
+  	io.emit('update', data);
   })
   
 });
