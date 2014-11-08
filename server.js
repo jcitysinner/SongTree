@@ -13,6 +13,8 @@ app.use('/assets/', express.static(__dirname + '/public/assets/'));
 // Route our Home Page
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
+  
+
 });
 
 // Handle Socket Connection
