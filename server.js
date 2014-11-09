@@ -13,8 +13,21 @@ app.use('/assets/', express.static(__dirname + '/public/assets/'));
 // Route our Home Page
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
-  
+});
 
+// Route our Login Page
+app.get('/login', function(req, res){
+  res.sendFile(__dirname + '/public/login.html');
+});
+
+// Route our Signup Page
+app.get('/signup', function(req, res){
+  res.sendFile(__dirname + '/public/signup.html');
+});
+
+// Route our Main Page
+app.get('/main', function(req, res){
+  res.sendFile(__dirname + '/public/main.html');
 });
 
 // Handle Socket Connection
