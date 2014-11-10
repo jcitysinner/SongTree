@@ -1,12 +1,11 @@
 div.songs
 
-      div.controls
+div.controls
 
+	h3 Song Link
+	input#songLink(type="text")
 
-        h3 Song Link
-        input#songLink(type="text")
+	h3 Message
+	input#message(type="text")
 
-        h3 Message
-        input#message(type="text")
-
-        a(href='#') Post Song
+	a#postSong(href='#' onclick='postSong()') Post Song
