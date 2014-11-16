@@ -1,29 +1,10 @@
 
+var $ = window.$;
 var currentUserName;
 var currentTwitter;
 var socket = io();
-var $ = window.$;
 
 
-
-
-
-// Create New Socket Connection using Socket.io
-
-
-// Send a message to the server
-// $('#postSong').click(function(){
-//     console.log('test');
-// 	var song = $('#songLink').val();
-//     var message = $('#message').val();
-
-//     var data = [song, message];
-// 	socket.emit('song', data);
-//     $('#songLink').val('');
-//     $('#message').val('');
-// });
-
-// Recieve Update Event From The Server
 socket.on('update', function(data){
 
     var songDiv = document.createElement('div');
@@ -51,7 +32,9 @@ socket.on('update', function(data){
 
 	$(songDiv).append(iframeElement);
     $('.songs').prepend(songDiv);
+
 })
+
 
 socket.on('post', function(message){
 
@@ -64,27 +47,36 @@ function signUpSubmit () {
 
     var username = $('#userNameSignUp').val();
     var password = $('#passwordSignUp').val();
-    var twitter = $('#twitterSignUp').val();
-
+    var twitter  = $('#twitterSignUp').val();
 
     var user = new Parse.User();
+
     user.set("username", username);
     user.set("password", password);
     user.set("twitter", twitter);
      
     user.signUp(null, {
+
       success: function(user) {
+
         // Hooray! Let them use the app now.
         window.currentUserName = username;
         window.currentTwitter = twitter;
         $('.wrapper').load('../../main');
+
       },
+
       error: function(user, error) {
+
         // Show the error message somewhere and let the user try again.
         alert("Error: " + error.code + " " + error.message);
+
       }
+
     });
+
 }
+
 
 function loginSubmit () {
 
@@ -92,37 +84,50 @@ function loginSubmit () {
     var password = $('#passwordLogin').val();
 
     Parse.User.logIn(username, password, {
+
       success: function(user) {
+
         // Do stuff after successful login.
         window.currentUserName = username;
         window.currentTwitter = Parse.User.current().get('twitter');
         $('.wrapper').load('../../main');
+
       },
+
       error: function(user, error) {
+
         // The login failed. Check error to see why.
         //console.log(username + " " + password);
         console.log(error);
+
       }
+
     });
 
 }
 
+
 function toSignup () {
+
     $('.wrapper').load('../../signup');
+
 }
+
 
 function postSong () {
 
-    console.log('test');
-    var song = $('#songLink').val();
+    var song    = $('#songLink').val();
     var message = $('#message').val();
 
-    var data = [song, message];
+    var data    = [song, message];
+
     socket.emit('song', data);
+
     $('#songLink').val('');
     $('#message').val('');
 
 }
+
 
 function sendMessage () {
 
@@ -133,12 +138,12 @@ function sendMessage () {
 
 }
 
+
 function getCurrentUserInfo (username, twitter) {
 
-    console.log(username +" " + twitter);
+    console.log(username + " " + twitter);
 
     window.currentUserName = username;
     window.currentTwitter  = twitter;
-
 
 }
