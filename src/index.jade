@@ -34,14 +34,3 @@ html
 
       Parse.initialize("NnvxFEV96oeiM865LdDXd0OwynwVFbce7bDmGzIp", "bM1DksJoneM0WnPrNlTmO2sATr8whAEIk7vLTaEj");
 
-    
-      var TestObject = Parse.Object.extend("TestObject");
-      var testObject = new TestObject();
-        testObject.save({foo: "bar"}, {
-        success: function(object) {
-          $(".success").show();
-        },
-        error: function(model, error) {
-          $(".error").show();
-        }
-      });

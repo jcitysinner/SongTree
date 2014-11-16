@@ -1,11 +1,23 @@
-div.songs
+div.songList
 
-div.controls
+	div.songs
 
-	h3 Song Link
-	input#songLink(type="text")
+	div.controls
 
-	h3 Message
-	input#message(type="text")
+		h3 Song Link
+		input#songLink(type="text" placeholder="Paste a Song URL from Soundcloud Here")
 
-	a#postSong(href='#' onclick='postSong()') Post Song
+		h3 Message
+		input#message(type="text" placeholder="Add a message to your post")
+
+		a#postSong(href='#' onclick='postSong()') Post Song
+
+div.chatWindow
+
+	div.chatSection
+
+	div.chatBox
+
+		input#chatBox(type="text" placeholder="Send a Message")
+
+		a#chatSubmit(href='#' onclick='sendMessage()') Send

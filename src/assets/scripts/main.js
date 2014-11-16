@@ -3,9 +3,10 @@ var currentUserName;
 var currentTwitter;
 var socket = io();
 var $ = window.$;
-
     
+
 $('.wrapper').load('../../login');
+
 
 
 // Create New Socket Connection using Socket.io
@@ -51,6 +52,12 @@ socket.on('update', function(data){
 
 	$(songDiv).append(iframeElement);
     $('.songs').prepend(songDiv);
+})
+
+socket.on('post', function(message){
+
+    $('.chatSection').append('<p><span>' + message[1] + ': </span>' + message[0] + '</p>');
+
 })
 
 
@@ -115,5 +122,14 @@ function postSong () {
     socket.emit('song', data);
     $('#songLink').val('');
     $('#message').val('');
+
+}
+
+function sendMessage () {
+
+    var message = [$('#chatBox').val(), window.currentUserName];
+    $('#chatBox').val('');
+
+    socket.emit('message', message);
 
 }

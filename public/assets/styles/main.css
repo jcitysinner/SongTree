@@ -66,6 +66,44 @@ div.signUpForm, div.loginForm {
     width: 100%;
     padding: 10px; }
 
+div.songList {
+  width: 75%;
+  float: left; }
+
+div.chatWindow {
+  width: 25%;
+  height: 100vh;
+  float: right;
+  background-color: white; }
+  div.chatWindow div.chatSection {
+    height: 82vh;
+    color: #333;
+    padding: 5px; }
+    div.chatWindow div.chatSection span {
+      color: #e67e22; }
+  div.chatWindow div.chatBox {
+    height: 18vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    padding: 10px;
+    border-top: solid 3px #333; }
+    div.chatWindow div.chatBox input {
+      width: 100%;
+      display: inline-block;
+      padding: 13px 13px;
+      border: 1px solid #333;
+      line-height: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px; }
+    div.chatWindow div.chatBox a {
+      border: solid 1px #333;
+      color: #333; }
+    div.chatWindow div.chatBox a:hover {
+      background-color: #333;
+      color: white; }
+
 div.songs {
   padding: 0 10px;
   padding-bottom: 225px; }
@@ -73,7 +111,7 @@ div.songs {
 div.controls {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 75%;
   background-color: #333;
   padding: 10px;
   border-top: 3px solid #e67e22; }

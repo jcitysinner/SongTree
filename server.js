@@ -38,6 +38,10 @@ io.on('connection', function(socket){
   socket.on('song', function(data){
   	io.emit('update', data);
   })
+
+  socket.on('message', function(message){
+    io.emit('post', message);
+  })
   
 });
 

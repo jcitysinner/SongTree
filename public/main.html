@@ -1,8 +1,16 @@
 
-<div class="songs"></div>
-<div class="controls">
-  <h3>Song Link</h3>
-  <input id="songLink" type="text"/>
-  <h3>Message</h3>
-  <input id="message" type="text"/><a id="postSong" href="#" onclick="postSong()">Post Song</a>
+<div class="songList">
+  <div class="songs"></div>
+  <div class="controls">
+    <h3>Song Link</h3>
+    <input id="songLink" type="text" placeholder="Paste a Song URL from Soundcloud Here"/>
+    <h3>Message</h3>
+    <input id="message" type="text" placeholder="Add a message to your post"/><a id="postSong" href="#" onclick="postSong()">Post Song</a>
+  </div>
+</div>
+<div class="chatWindow">
+  <div class="chatSection"></div>
+  <div class="chatBox">
+    <input id="chatBox" type="text" placeholder="Send a Message"/><a id="chatSubmit" href="#" onclick="sendMessage()">Send</a>
+  </div>
 </div>
