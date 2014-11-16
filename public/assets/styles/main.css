@@ -65,6 +65,15 @@ div.signUpForm, div.loginForm {
   div.signUpForm input, div.loginForm input {
     width: 100%;
     padding: 10px; }
+  div.signUpForm h1, div.signUpForm h2, div.loginForm h1, div.loginForm h2 {
+    color: #e67e22; }
+  div.signUpForm a, div.loginForm a {
+    margin: 25px 0px 0px 0px;
+    border: solid 1px #e67e22;
+    color: #e67e22; }
+  div.signUpForm a:hover, div.loginForm a:hover {
+    background-color: #e67e22;
+    color: #333; }
 
 div.songList {
   width: 75%;
