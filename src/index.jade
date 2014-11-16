@@ -32,5 +32,22 @@ html
 
     script.
 
-      Parse.initialize("NnvxFEV96oeiM865LdDXd0OwynwVFbce7bDmGzIp", "bM1DksJoneM0WnPrNlTmO2sATr8whAEIk7vLTaEj");
+        Parse.initialize("NnvxFEV96oeiM865LdDXd0OwynwVFbce7bDmGzIp", "bM1DksJoneM0WnPrNlTmO2sATr8whAEIk7vLTaEj");
+
+        var current = Parse.User.current();
+
+        if (current){
+
+            console.log(current.get('username'));
+
+            getCurrentUserInfo(current.get('username'), current.get('twitter'));
+
+            $('.wrapper').load('../../main');
+            
+
+        } else {
+
+            $('.wrapper').load('../../login');
+
+        }
 

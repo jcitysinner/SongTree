@@ -3,9 +3,8 @@ var currentUserName;
 var currentTwitter;
 var socket = io();
 var $ = window.$;
-    
 
-$('.wrapper').load('../../login');
+
 
 
 
@@ -131,5 +130,15 @@ function sendMessage () {
     $('#chatBox').val('');
 
     socket.emit('message', message);
+
+}
+
+function getCurrentUserInfo (username, twitter) {
+
+    console.log(username +" " + twitter);
+
+    window.currentUserName = username;
+    window.currentTwitter  = twitter;
+
 
 }
